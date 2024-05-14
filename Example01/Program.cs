@@ -38,7 +38,7 @@ WebApplication app = builder.Build();
 app.UseStaticFiles();
 //ara katmana ulasmak için https://localhost:1234/css/main.css
 
-app.UseHsts(); // Header da security durumu kontrol ediyor.
+app.UseHsts(); // Header da security durumu kontrol ediyor..
 
 app.UseHttpsRedirection(); // Secure olmayan sayfayý ana porta redirect eder. http->https 
 
