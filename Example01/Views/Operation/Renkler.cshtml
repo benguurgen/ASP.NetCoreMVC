@@ -1,0 +1,44 @@
+﻿
+@{
+    int[] red = new int[10];
+    int[] green = new int[10];
+    int[] blue = new int[10];
+
+    for(int i = 0; i<10; i++)
+    {
+        red[i] = new Random().Next(256);
+        green[i] = new Random().Next(256);
+        blue[i] = new Random().Next(256);
+
+    }
+}
+@functions{ // fonsiyon için açılan scope
+    int Topla(int num1, int num2){
+        return num1 + num2;
+    }
+}
+@{
+    int j = 0;
+}
+@while (j<10)
+{
+    <span style="width:10px height:10px; border:1px solid black; margin-left:2px; background-color:rgb(@red[j],@blue[j],@green[j]">TEST</span>
+
+    j++;
+}
+
+@try
+{
+    int num1 = 10;
+    int num2 = 0;
+    int result = num1 / num2;
+}
+catch(Exception ex)
+{
+    <p style="color:red; font-weight:bolder">@ex.Message</p>
+}
+finally
+{
+    //fonsiyonu çağırdık.
+    <p> @Topla(25,15)</p>
+}
