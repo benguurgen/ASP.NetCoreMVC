@@ -1,0 +1,38 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers  
+@*Tag helper ekleme|*@
+@*
+    8. Indexin viewi
+*@
+@{
+    string message = "Merhaba Dünya";
+    SelectListItem selectListItem1 = new SelectListItem() { Text = "Cumartesi", Value = "1" };
+    SelectListItem selectListItem2 = new SelectListItem() { Text = "Pazar", Value = "2" };
+    List<SelectListItem> listItems = new List<SelectListItem>();
+    listItems.Add(selectListItem1);
+    listItems.Add(selectListItem2);
+
+}
+<b>Index View</b>
+<br />
+@*Html tagını kullanarak form elemanları çağıralım.*@
+@Html.ActionLink("Hakkımızda","About","Home") @*About Actiona giden metin oluşturdu.*@
+<br />
+@Html.ActionLink("Google",null,null,null,null,null,null,new { @class= "link", href="https://www.google.com"}) @*google gider.*@
+
+@{
+    Html.BeginForm("Index", "Home", FormMethod.Get);
+}
+@Html.CheckBox("cbox")
+@Html.TextBox("tbox","Bengü",new {style="color:red", id="txtAdi"})
+Kadın @Html.RadioButton("rbutton", "Kadın", true, new {@class="txtAdi"})
+Erkek @Html.RadioButton("rbutton", "Erkek", false, new { @class = "txtAdi" })
+@Html.DropDownList("ddList", listItems, new { @class = "txtAdi", style="background-color:red"})
+@Html.Label("tbox") @*text boxu etiketler*@
+<input type="submit" />
+@{
+    Html.EndForm();
+}
+
+@Html.ActionLink("İletişim","Contact","Home")
+
+<a asp-action="Contact" asp-controller="Home">İletişim</a>
