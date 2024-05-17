@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example02ViewEngine", "Exam
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example03TagHelper", "Example03\Example03TagHelper.csproj", "{B0539589-999F-4E5C-A67F-23726785FF76}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example04Controllers", "Example04Controllers\Example04Controllers.csproj", "{F41EC76A-8825-4B3D-BC5D-975BED8B245C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B0539589-999F-4E5C-A67F-23726785FF76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0539589-999F-4E5C-A67F-23726785FF76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0539589-999F-4E5C-A67F-23726785FF76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F41EC76A-8825-4B3D-BC5D-975BED8B245C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F41EC76A-8825-4B3D-BC5D-975BED8B245C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F41EC76A-8825-4B3D-BC5D-975BED8B245C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F41EC76A-8825-4B3D-BC5D-975BED8B245C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
