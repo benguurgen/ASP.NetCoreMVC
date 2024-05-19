@@ -1,0 +1,55 @@
+﻿@model List<Student>
+@{
+    string title = ViewData["Baslık"].ToString();
+}
+
+<h1 class="m-3" style="color:crimson ">@title.ToUpper()</h1>
+<div class="row mt-5">
+
+    <div class="col-3">
+        Sol taraf
+    </div>
+    <div class="col-9">
+        @*Burası Index sayfası olarak öğrencilerin listelendiği, listedeki öğrencilerin bilgilerinin güncelleme/detay/silme işlemlerinin yapılacağı, aynı zamanda bir ekleme butonunun olacağı sayfa tasarımı olacak*@
+        <div class="d-flex justify-content-end">
+            <div class="p-2">
+                <a asp-controller="Student" asp-action="Create" class="btn btn-success" role="button">Yeni Öğrenci</a>
+            </div>
+        </div>
+        <table class="table table-danger table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Adı</th>
+                    <th scope="col">Soyadı</th>
+                    <th scope="col">Cinsiyeti</th>
+                    <th scope="col">E-posta</th>
+                    <th scope="col">Doğum Tarihi</th>
+                    <th scope="col">Durumu</th>
+                    <th scope="col">İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach(Student student in Model)
+                {
+                <tr>
+                    <th scope="row">@student.Id</th>
+                    <td>@student.Name</td>
+                    <td>@student.Surname</td>
+                    <td>@student.Gender</td>
+                    <td>@student.Email</td>
+                    <td>@student.BirthDate</td>
+                    <td>@student.StudentStatus</td>
+                    <td>
+                        @* /Student/Details/1 *@
+                            <a asp-controller="Student" asp-action="Details" asp-route-id="@student.Id" class="btn btn-primary" role="button">Detay</a>
+                            <a asp-controller="Student" asp-action="Edit'" asp-route-id="@student.Id" class="btn btn-secondary" role="button">Düzenle</a>
+                            <a asp-controller="Student" asp-action="Delete" asp-route-id="@student.Id" class="btn btn-danger" role="button">Sil</a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
