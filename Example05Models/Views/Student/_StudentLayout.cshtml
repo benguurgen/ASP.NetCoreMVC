@@ -1,0 +1,12 @@
+﻿@{
+    Layout = "_Layout";
+}
+<h1 class="m-3" style="color:crimson ">@ViewData["Baslık"].ToString().ToUpper()</h1>
+<div class="row mt-5">
+    <div class="col-3">
+        Bu yazı _StudentLayoutta eklendi.
+    </div>
+    <div class="col-9">
+        @RenderBody()
+    </div>
+</div>

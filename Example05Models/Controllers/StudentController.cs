@@ -24,7 +24,21 @@ namespace Example05Models.Controllers
             ViewData["Baslık"]= "Öğrenciler";
             List<Student> student = StudentService.Students();
 
-            return View(student);
+            //ViewBag.KayitDeneme = ViewBag.Deneme ?? "ViewBag.Deneme gelemedi"; //Controllera gidemez
+            //ViewData["KayitEkBilgi"] = ViewData["EkBilgi"] ?? "ViewData[\"KayittanGelenEkBilgi\"] gelemedi"; //Controllera gidemez
+
+            //string tempData = "TempData[\"KayıtDurumu\"] henüz gönderilmedi";
+
+            //if (TempData["KayitDurumu"] != null)
+            //{
+            //    tempData = TempData["KayitDurumu"].ToString() ; // Controllera gelir.
+            //}
+
+            //ViewBag.KayitTempData= tempData ;
+
+            List<Student> students = StudentService.Students();
+            return View(students);
+                
         }
 
         // GET: StudentController/Details/5
@@ -50,10 +64,23 @@ namespace Example05Models.Controllers
         // POST: StudentController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
+        public ActionResult Create(Student student)
+          {
             try
             {
+
+                //ViewBag.Deneme = "view bag geldin mi";
+                //ViewData["EkBilgi"] = "View Data geldin mi";
+                //TempData["KayitDurumu"] = "Kayıt başarılı oldu";
+
+                //string name = collection["Name"];
+                //string surname = collection[";Surname"];
+                //string email = collection["Email"];
+                //string birthDate = collection["BirthDate"];
+                //string gender = collection["Gender"];
+                //string status = collection["StudentStatus"];
+
+
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -77,6 +104,7 @@ namespace Example05Models.Controllers
         {
             try
             {
+
                 return RedirectToAction(nameof(Index));
             }
             catch

@@ -16,4 +16,7 @@ app.UseStaticFiles();
 //Otomatik rotolama ekliyoruz.
 app.MapDefaultControllerRoute();
 
+//Rotayý deðiþtirdik.
+//app.MapControllerRoute(name: "yeniRota", pattern: " {action=Index}/{controller=Home}/{id?}");
+
 app.Run();

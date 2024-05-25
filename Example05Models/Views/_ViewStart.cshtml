@@ -1,3 +1,9 @@
 ﻿@{
+    List<FooterMenu> footerMenus = new List<FooterMenu>();
+    footerMenus.Add(new FooterMenu() { Title = "Menu1", Link = "/Menu/Index/1" });
+    footerMenus.Add(new FooterMenu() { Title = "Menu2", Link = "/Menu/Index/2" });
+    footerMenus.Add(new FooterMenu() { Title = "Menu3", Link = "/Menu/Index/3" });
+
     Layout = "_Layout";
+    ViewBag.FooterMenus = footerMenus;
 }
